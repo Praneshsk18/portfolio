@@ -11,17 +11,18 @@ export default function Home() {
       <main>
         <Header />
         <div className="flex flex-col">
-          <section id="home" className="h-screen mt-28">
-            <div className="grid grid-cols-2 h-full">
-              <div className="pt-28 pl-10">
-                <div className=" animate-fadeIn">
+          {/* Home Section */}
+          <section id="home" className="h-auto mt-28 px-4 md:px-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="pt-10 md:pt-28 pl-4 md:pl-10">
+                <div className="animate-fadeIn">
                   <p className="text-stone-400 font-mono font-semibold">
                     Hi I am
                   </p>
                   <p className="pt-5 text-2xl text-stone-400 font-bold font-sans">
                     Pranesh S
                   </p>
-                  <h5 className="pt-5 text-5xl font-bold text-amber-700">
+                  <h5 className="pt-5 text-4xl md:text-5xl font-bold text-amber-700">
                     SOFTWARE DEVELOPER
                   </h5>
                   <div className="flex flex-row items-center gap-4 pt-3">
@@ -38,7 +39,7 @@ export default function Home() {
                         src="/linkedin.png"
                         width="45"
                         height="45"
-                        alt="Insta"
+                        alt="LinkedIn"
                       />
                     </a>
                     <a href="#" className="rounded-full border-1">
@@ -46,7 +47,7 @@ export default function Home() {
                         src="/twitter.png"
                         width="45"
                         height="45"
-                        alt="Insta"
+                        alt="Twitter"
                       />
                     </a>
                     <a href="#" className="rounded-full border-1">
@@ -54,7 +55,7 @@ export default function Home() {
                         src="/github.png"
                         width="45"
                         height="45"
-                        alt="Insta"
+                        alt="GitHub"
                       />
                     </a>
                     <a href="#" className="rounded-full border-1">
@@ -62,24 +63,24 @@ export default function Home() {
                         src="/facebook.png"
                         width="45"
                         height="45"
-                        alt="Insta"
+                        alt="Facebook"
                       />
                     </a>
                   </div>
                 </div>
-                <div className="flex pt-10 gap-5">
+                <div className="flex pt-10 gap-5 justify-center">
                   <a href="#">
-                    <button className=" bg-orange-600 hover:bg-amber-500 shadow-md shadow-orange-500/50 px-8 py-2 rounded">
+                    <button className="bg-orange-600 hover:bg-amber-500 shadow-md shadow-orange-500/50 px-6 md:px-8 py-2 rounded">
                       Hire me
                     </button>
                   </a>
                   <a href="#">
-                    <button className="border-2 border-stone-500/50 bg-transparent hover:bg-yellow-100/20 shadow-md shadow-orange-500/50 px-8 py-2 rounded">
+                    <button className="border-2 border-stone-500/50 bg-transparent hover:bg-yellow-100/20 shadow-md shadow-orange-500/50 px-6 md:px-8 py-2 rounded">
                       Download CV
                     </button>
                   </a>
                 </div>
-                <div className="grid grid-cols-3 mx-auto h-24 w-2/3 bg-stone-500/25 mt-20 rounded-xl ">
+                <div className="grid grid-cols-3 mx-auto h-24 w-full md:w-2/3 bg-stone-500/25 mt-10 md:mt-20 rounded-xl mb-5">
                   <div className="grid grid-rows-2 justify-items-left pl-4 border-r border-stone-500">
                     <div className="flex items-center">
                       <p className="text-base font-bold font-mono text-amber-600 pt-4">
@@ -118,25 +119,29 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="bg-yellow-100 flex justify-center items-center min-h-screen">
+              <div className="flex justify-center items-center min-h-[50vh] md:min-h-screen">
                 <Image
                   src="/Profile.png"
                   alt="Profile image"
                   layout="responsive"
-                  width={0}
-                  height={0}
+                  width={500}
+                  height={500}
+                  className="rounded-lg"
                 />
               </div>
             </div>
-            <br></br>
           </section>
-          <section id="about" className="h-screen mt-20">
-            <div className="text-center pt-24">
-              <h1 className="font-bold text-5xl text-yellow-800">About Me</h1>
+
+          {/* About Section */}
+          <section id="about" className="h-auto mt-20 px-4 md:px-20">
+            <div className="text-center pt-10 md:pt-24">
+              <h1 className="font-bold text-4xl md:text-5xl text-yellow-800">
+                About Me
+              </h1>
             </div>
-            <div className="w-full mt-12 pl-20 pr-20">
+            <div className="w-full mt-8 md:mt-12">
               <div className="mx-auto">
-                <p className="text-zinc-300">
+                <p className="text-zinc-300 text-sm md:text-base">
                   I am Pranesh S, a passionate and driven IT student with
                   expertise in Python, Java, TensorFlow, and the MERN stack. I
                   thrive at the intersection of creativity and technology,
@@ -155,101 +160,95 @@ export default function Home() {
                   highlights my quick thinking and problem-solving abilities.
                 </p>
               </div>
-              <div className="grid h-80 bg-stone-800 grid-cols-3 mt-20 rounded-xl">
-                <div className="border-r justify-items-center ">
-                  <p className="mt-3 font-bold text-yellow-600 shadow-md rounded px-3 py-1 shadow-amber-500">
-                    Core Values
-                  </p>
-                  <p className="pl-10 pt-3 pr-10 text-zinc-300">
-                    Curiosity: I am constantly exploring emerging technologies
-                    like AI, cloud computing, and web development to stay at the
-                    forefront of innovation.
-                  </p>
-                  <p className="pl-10 pt-3 pr-10 text-zinc-300">
-                    Innovation: I strive to develop applications that are not
-                    only functional but also user-centric and impactful.
-                  </p>
-                  <p className="pl-10 pt-3 pr-10 text-zinc-300">
-                    Adaptability: With hands-on experience across various
-                    frameworks, databases, and cloud services, I am adept at
-                    navigating dynamic environments.
-                  </p>
-                </div>
-                <div className="border-r justify-items-center">
-                  <p className="mt-3 font-bold text-yellow-600 shadow-md rounded px-3 py-1 shadow-amber-500">
-                    Fun Facts About Me
-                  </p>
-                  <p className="pl-10 pt-3 pr-10 text-zinc-300">
-                    - I enjoy contributing to personal projects, such as
-                    creating a To-Do App and maintaining a Personal Blog, which
-                    reflect my organizational skills and passion for writing.
-                  </p>
-                  <p className="pl-10 pt-3 pr-10 text-zinc-300">
-                    - Outside of coding, I enjoy exploring Linux systems,
-                    experimenting with cloud automation tools, and keeping up
-                    with tech trends.
-                  </p>
-                </div>
-                <div className=" justify-items-center">
-                  <p className="mt-3 font-bold text-yellow-600 shadow-md rounded px-3 py-1 shadow-amber-500">
-                    Looking Ahead
-                  </p>
-                  <p className="pl-10 pt-3 pr-10 text-zinc-300">
-                    My career aspirations lie in the fields of artificial
-                    intelligence, cloud engineering, and full-stack development.
-                    I aim to continue working on projects that challenge my
-                    abilities and make a difference in people’s lives. Whether
-                    it’s designing scalable systems, building intuitive user
-                    interfaces, or developing intelligent algorithms, I am
-                    committed to growing as a professional and making meaningful
-                    contributions.
-                  </p>
-                </div>
-              </div>
+              <div className="grid md:grid-cols-3 bg-stone-800 mt-10 md:mt-20 rounded-xl p-5 md:pb-10 items-stretch">
+  {/* Core Values - Left Side */}
+  <div className="border-b-2 md:border-b-0 md:border-r-2 border-amber-600 p-6 h-full">
+    <p className="font-bold text-yellow-600 shadow-md rounded px-3 py-1 shadow-amber-500">
+      Core Values
+    </p>
+    <p className="pt-3 text-zinc-300">
+      Curiosity: I am constantly exploring emerging technologies like AI, cloud computing, and web development to stay at the forefront of innovation.
+    </p>
+    <p className="pt-3 text-zinc-300">
+      Innovation: I strive to develop applications that are not only functional but also user-centric and impactful.
+    </p>
+    <p className="pt-3 text-zinc-300">
+      Adaptability: With hands-on experience across various frameworks, databases, and cloud services, I am adept at navigating dynamic environments.
+    </p>
+  </div>
+
+  {/* Fun Facts - Middle */}
+  <div className="border-b-2 md:border-b-0 md:border-x-2 border-amber-800 p-6 h-full">
+    <p className="font-bold text-blue-600 shadow-md rounded px-3 py-1 shadow-blue-500">
+      Fun Facts About Me
+    </p>
+    <p className="pt-3 text-zinc-300">
+      - I enjoy contributing to personal projects, such as creating a To-Do App and maintaining a Personal Blog, which reflect my organizational skills and passion for writing.
+    </p>
+    <p className="pt-3 text-zinc-300">
+      - Outside of coding, I enjoy exploring Linux systems, experimenting with cloud automation tools, and keeping up with tech trends.
+    </p>
+  </div>
+
+  {/* Looking Ahead - Right Side */}
+  <div className="border-b-2 md:border-b-0 md:border-l-2 border-amber-600 p-6 h-full">
+    <p className="font-bold text-red-600 shadow-md rounded px-3 py-1 shadow-red-500">
+      Looking Ahead
+    </p>
+    <p className="pt-3 text-zinc-300">
+      My career aspirations lie in the fields of artificial intelligence, cloud engineering, and full-stack development. I aim to continue working on projects that challenge my abilities and make a difference in people’s lives. Whether it’s designing scalable systems, building intuitive user interfaces, or developing intelligent algorithms, I am committed to growing as a professional and making meaningful contributions.
+    </p>
+  </div>
+</div>
+
             </div>
           </section>
-          <section id="skills" className="h-auto">
+
+          {/* Skills Section */}
+          <section id="skills" className="h-auto px-4 md:px-10">
             <div>
-              <p className="flex justify-center font-bold text-5xl text-yellow-800 mt-32">
+              <p className="flex justify-center font-bold text-4xl md:text-5xl text-yellow-800 mt-20 md:mt-32">
                 Skills
               </p>
-              <p className="flex justify-center pt-5 text-2xl font-semibold text-gray-400">
+              <p className="flex justify-center pt-5 text-xl md:text-2xl font-semibold text-gray-400">
                 Technical Skills
               </p>
               <SkillSection />
               <div className="flex justify-center">
-                <h3 className="text-2xl font-semibold mb-8 text-gray-400 ">
+                <h3 className="text-xl md:text-2xl font-semibold mb-8 text-gray-400">
                   Soft Skills
                 </h3>
               </div>
               <SoftSkills />
             </div>
-            <p className="flex justify-center font-bold text-2xl text-gray-400 pt-10">
+            <p className="flex justify-center font-bold text-xl md:text-2xl text-gray-400 pt-10">
               Certification
             </p>
             <Certificates />
           </section>
-          <section id="projects" className="h-auto">
+
+          {/* Projects Section */}
+          <section id="projects" className="h-auto px-4 md:px-10">
             <Projects />
           </section>
-          <section
-            id="experience"
-            className="h-screen mt-24"
-          >
-            <div className="flex justify-center ">
-            <p className="font-bold text-5xl text-amber-700 mt-24">Experience</p>
-            
+
+          {/* Experience Section */}
+          <section id="experience" className="h-auto mt-20 px-4 md:px-10">
+            <div className="flex justify-center">
+              <p className="font-bold text-4xl md:text-5xl text-amber-700 mt-10 md:mt-24">
+                Experience
+              </p>
             </div>
           </section>
-          <section
-            id="acheivements"
-            className="h-screen bg-amber-200 mt-24"
-          ></section>
-          <section id="blog" className="h-screen bg-yellow-200 mt-24"></section>
-          <section
-            id="contact"
-            className="h-screen bg-black-200 mt-24"
-          ></section>
+
+          {/* Achievements Section */}
+          <section id="achievements" className="h-auto bg-amber-200 mt-20"></section>
+
+          {/* Blog Section */}
+          <section id="blog" className="h-auto bg-yellow-200 mt-20"></section>
+
+          {/* Contact Section */}
+          <section id="contact" className="h-auto bg-black-200 mt-20"></section>
         </div>
       </main>
     </div>

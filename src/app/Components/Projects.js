@@ -7,7 +7,7 @@ const Projects = () => {
       <div className="flex justify-center">
         <p className="font-bold text-5xl text-amber-700 mt-24">Projects</p>
       </div>
-      <div className="grid ml-20 mr-20 mt-10 justify-items-center gap-4">
+      <div className="grid md:mx-20 mt-10 justify-items-center gap-4">
         {Skills.Projects.map((data, key) => (
           <div
             key={key}
