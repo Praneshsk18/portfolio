@@ -9,9 +9,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+<<<<<<< HEAD
 
     --background: #181414;
     --background: #0a0a0a;
+=======
+    --background: #181414;
+>>>>>>> 36348d2 (Updated About Me section to be responsive)
     --foreground: #ededed;
   }
 }
