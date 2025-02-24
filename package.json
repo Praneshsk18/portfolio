@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@lottiefiles/lottie-player": "^2.0.12",
     "@tailwindcss/postcss": "^4.0.7",
     "axios": "^1.7.9",
@@ -27,6 +28,13 @@
     "react-toastify": "^11.0.3",
     "react-typical": "^0.1.3",
     "typewriter-effect": "^2.21.0"
+=======
+    "@tailwindcss/postcss": "^4.0.7",
+    "lucide-react": "^0.475.0",
+    "next": "15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+>>>>>>> edc34dcd384f037d3b574b1ca7c63312082fd0a6
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
