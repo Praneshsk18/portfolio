@@ -19,10 +19,7 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
-<<<<<<< HEAD
 
 .w::after{
   display: none;
 }
-=======
->>>>>>> edc34dcd384f037d3b574b1ca7c63312082fd0a6
