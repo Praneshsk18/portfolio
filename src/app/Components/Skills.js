@@ -1,6 +1,5 @@
 const skills = {
   technical: [
-<<<<<<< HEAD
     { name: "Python", url: "/python.png",id:1 },
     { name: "JavaScript", url: "/javascript.png",id:2 },
     { name: "React.js", url: "/react.png",id:3 },
@@ -19,27 +18,6 @@ const skills = {
     {name:"Communication",id:3},
     {name:"Adaptability",id:4},
     {name:"Leadership",id:5},
-=======
-    { name: "Python", url: "/python.png" },
-    { name: "JavaScript", url: "/js.png" },
-    { name: "React.js", url: "/react.png" },
-    { name: "Node.js", url: "/node.png" },
-    { name: "Java", url: "/Java.png" },
-    { name: "PHP", url: "/php.png" },
-    { name: "Express.js", url: "/express.png" },
-    { name: "Laravel", url: "/laravel.png" },
-    { name: "MongoDb", url: "/mongodb.png" },
-    { name: "Mysql", url: "/mysql.png" },
-    { name: "Git", url: "/git.png" },
-    { name: "AWS", url: "/aws.png" },
-  ],
-  soft: [
-    "Teamwork",
-    "Problem-Solving",
-    "Communication",
-    "Adaptability",
-    "Leadership",
->>>>>>> edc34dcd384f037d3b574b1ca7c63312082fd0a6
   ],
   Certifications: [
     {
@@ -120,30 +98,12 @@ const skills = {
         "HTML/CSS",
         "JavaScript",
       ],
-<<<<<<< HEAD
-=======
-      features: [
-        "Text Input",
-        "Audio Input",
-        "Speech Recognition",
-        "Text Cleaning",
-        "Text Vectorization",
-        "Real-time Processing",
-        "Sentiment Classification",
-        "User Interface",
-        "Result Display",
-      ],
->>>>>>> edc34dcd384f037d3b574b1ca7c63312082fd0a6
       link: "https://github.com/Praneshsk18/HateSpeech",
     },
     {
       projectname: "Blog",
       description:
-<<<<<<< HEAD
         "This is a full-stack web application developed with the MERN stack, including MongoDB, Express.js, React, and Node.js. The blog has been designed for seamless content creation and management. The users can easily publish, edit, and organize their blog posts. A dynamic front-end is built with React, while a robust back-end is powered by Node.js and Express. It ensures that users have a smooth and engaging experience. The MongoDB database allows it to be scalable and flexible enough to store posts, user profiles, and comments. This project showcases modern web development practices, authentication features, and a responsive UI, making it a great platform for sharing thoughts and experiences online.",
-=======
-        "Here's the description for your personal blog project using MERN stack and MongoDB.This is a full-stack web application developed with the MERN stack, including MongoDB, Express.js, React, and Node.js. The blog has been designed for seamless content creation and management. The users can easily publish, edit, and organize their blog posts. A dynamic front-end is built with React, while a robust back-end is powered by Node.js and Express. It ensures that users have a smooth and engaging experience. The MongoDB database allows it to be scalable and flexible enough to store posts, user profiles, and comments. This project showcases modern web development practices, authentication features, and a responsive UI, making it a great platform for sharing thoughts and experiences online.",
->>>>>>> edc34dcd384f037d3b574b1ca7c63312082fd0a6
       technologies: [
         "React.js",
         "React Router",
@@ -154,12 +114,6 @@ const skills = {
         "JWT (JSON Web Token)",
         "Cors",
         "MongoDb",
-      ],
-      features: [
-        "User Authentication",
-        "Profile Management",
-        "Forgot Password & Reset",
-        "Create, Read, Update, Delete (CRUD)",
       ],
       link: "http://blog-omega-teal-11.vercel.app",
     },
