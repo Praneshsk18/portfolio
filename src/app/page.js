@@ -8,7 +8,7 @@ import Projects from "./Components/Projects";
 import Experience from "./Components/Experience";
 import Achievements from "./Components/Acheivements";
 import Contacts from "./Components/Contacts";
-import { useEffect } from "react";
+import { useState,useEffect } from "react";
 import TypewriterComponent from "typewriter-effect";
 import { motion } from "framer-motion";
 import Typist from "react-text-typist";
@@ -18,6 +18,23 @@ export default function Home() {
     import("@lottiefiles/lottie-player");
   }, []);
 
+  const Typewriter = ({ text, speed = 100 }) => {
+    const [displayedText, setDisplayedText] = useState("");
+    const [index, setIndex] = useState(0);
+  
+    useEffect(() => {
+      if (index < text.length) {
+        const timeout = setTimeout(() => {
+          setDisplayedText(text.substring(0, index + 1));
+          setIndex(index + 1);
+        }, speed);
+        return () => clearTimeout(timeout);
+      }
+    }, [index, text, speed]);
+  
+    return <span>{displayedText}</span>;
+  };
+  
   return (
     <div>
       <main>
@@ -25,26 +42,14 @@ export default function Home() {
         <div className="flex flex-col">
           {/* Home Section */}
           <section id="home" className="h-auto mt-28 px-4 md:px-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8">
               <div className="pt-10 md:pt-28 pl-4 md:pl-10">
                 <div className="animate-fadeIn">
                   <p className="text-stone-400 font-mono font-semibold">
-                    <Typist
-                      sentences={["Hi I am"]}
-                      loop={false}
-                      cursorBlinking={false}
-                      typingSpeed={5}
-                      hideCursorOnFinish={true}
-                    />
+                  <Typewriter text="Hi I am" speed={200} />
                   </p>
                   <p className="pt-5 text-2xl text-stone-400 font-bold font-sans">
-                    <Typist
-                      sentences={["Pranesh S"]}
-                      loop={false}
-                      cursorBlinking={false}
-                      duration={1000}
-                      hideCursorOnFinish={true}
-                    />
+                  <Typewriter text="Pranesh S" speed={200} />
                   </p>
                   <h5 className="pt-5 text-4xl md:text-5xl font-bold text-amber-700">
                     <TypewriterComponent
@@ -62,13 +67,13 @@ export default function Home() {
                   </h5>
                   <div className="flex flex-row items-center gap-4 pt-5">
                     {[
-                      { name: "/instalogo.json", href: "#" },
-                      { name: "/linkedin.json", href: "#" },
-                      { name: "/twitter.json", href: "#" },
-                      { name: "/github.json", href: "#" },
-                      { name: "/facebook.json", href: "#" },
+                      { name: "/instalogo.json", href: "https://www.instagram.com/pranesh_sk._?igsh=OW5rc2p6MTg1aHZr" },
+                      { name: "/linkedin.json", href: "https://www.linkedin.com/in/praneshsk/" },
+                      { name: "/twitter.json", href: "https://x.com/i/flow/login?redirect_after_login=%2FPraneshSk18" },
+                      { name: "/github.json", href: "https://github.com/Praneshsk18" },
+                      { name: "/facebook.json", href: "https://www.facebook.com/share/15sVeipnPV/?mibextid=qi2Omg" },
                     ].map((item) => (
-                      <Link key={item.href} href={item.href}>
+                      <Link key={item.href} href={item.href} target="_blank" rel="noopener noreferrer">
                         <motion.div className="flex rounded-full border border-amber-900/40 justify-center bg-[#181414] text-white transition-all duration-300 hover:bg-[#1a1a2e] hover:scale-110 hover:shadow-[0_0_4px_2px_rgba(0,0,0,0.2)] hover:shadow-amber-600">
                           <lottie-player
                             src={item.name}
@@ -88,8 +93,10 @@ export default function Home() {
                   transition={{ delay: 0.2, duration: 1, ease: "easeIn" }}
                   className="flex pt-10 gap-10 justify-left"
                 >
-                  <a href="#">
-                    <button className="w-[165px] h-[62px] cursor-pointer text-white text-[17px] rounded-[1rem] border-none relative bg-[#181414] transition-all duration-100 active:scale-90 active:rotate-3 active:bg-[radial-gradient(circle_farthest-corner_at_10%_20%,rgba(248,117,21,255)_17.8%,rgba(251,248,228,255)_100.2%)]">
+                  <a href="/resume.pdf" rel="noopener noreferrer" target="_blank" download="resume.pdf">
+                    <button onClick={() => {
+                      window.open("/Resume.pdf","_blank");
+                    }} className="w-[165px] h-[62px] cursor-pointer text-white text-[17px] rounded-[1rem] border-none relative bg-[#181414] transition-all duration-100 active:scale-90 active:rotate-3 active:bg-[radial-gradient(circle_farthest-corner_at_10%_20%,rgba(248,117,21,255)_17.8%,rgba(251,248,228,255)_100.2%)]">
                       <span className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_farthest-corner_at_10%_20%,rgba(248,117,21,255)_17.8%,rgba(251,248,228,255)_100.2%)] blur-[10px] -z-10"></span>
                       Download CV
                     </button>
@@ -217,7 +224,7 @@ export default function Home() {
           </section>
 
           {/* About Section */}
-          <section id="about" className="h-auto px-4 mt-40 md:px-20">
+          <section id="about" className="h-auto px-4 md:px-20">
             <motion.div
               initial={{ opacity: 0, z: -20 }}
               whileInView={{ opacity: 1, z: 0 }}

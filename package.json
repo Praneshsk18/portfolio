@@ -26,6 +26,7 @@
     "react-dom": "^19.0.0",
     "react-text-typist": "^1.1.8",
     "react-toastify": "^11.0.3",
+    "react-typewriting-effect": "^1.0.4",
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {

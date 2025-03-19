@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
@@ -16,8 +16,8 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Menu Items */}
-        <div className={`absolute md:static top-16 left-0 w-full md:w-auto bg-[#181414] md:bg-transparent transition-all duration-300 ${menuOpen ? "flex" : "hidden"} md:flex flex-col md:flex-row gap-6 md:gap-8 items-center px-5 md:px-0 py-4 md:py-0`}>
+        {/* Desktop Menu */}
+        <div className="hidden md:flex gap-8">
           {[
             { name: "Home", href: "#home" },
             { name: "About", href: "#about" },
@@ -26,31 +26,63 @@ export default function Header() {
             { name: "Projects", href: "#projects" },
             { name: "Experience", href: "#experience" },
             { name: "Achievements", href: "#achievements" },
-            { name: "Blog", href: "#blog" },
+            { name: "Blog", href: "#" },
             { name: "Contact", href: "#contact" },
           ].map((item) => (
             <Link
               key={item.href}
               href={item.href}
               className="text-gray-100 hover:text-amber-500 transition duration-300"
-              onClick={() => setMenuOpen(false)}
             >
               {item.name}
             </Link>
           ))}
         </div>
 
-        {/* Hire Me Button */}
-        <div className="flex items-rig  ht">
-          <button className="relative overflow-hidden px-6 py-2 rounded-lg font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-500 shadow-lg shadow-orange-500/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-amber-500/50">
-            Hire Me
-          </button>
+        {/* Hire Me Button & Mobile Menu Toggle */}
+        <div className="flex items-center">
+          <a href="#contact">
+            <button className="relative overflow-hidden px-6 py-2 rounded-lg font-semibold text-white bg-gradient-to-r from-orange-500 to-amber-500 shadow-lg shadow-orange-500/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-amber-500/50">
+              Hire Me
+            </button>
+          </a>
 
-          {/* Menu Toggle Button */}
-          <button className="md:hidden text-gray-100 ml-4" onClick={() => setMenuOpen(!menuOpen)}>
+          {/* Mobile Menu Toggle Button */}
+          <button
+            className="md:hidden text-gray-100 ml-4"
+            onClick={() => setMenuOpen(!menuOpen)}
+          >
             {menuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
+      </div>
+
+      {/* Mobile Dropdown Menu with Transition */}
+      <div
+        className={`absolute top-16 left-0 w-full bg-[#181414] md:hidden flex flex-col items-center gap-6 py-6 transition-all duration-300 ${
+          menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"
+        }`}
+      >
+        {[
+          { name: "Home", href: "#home" },
+          { name: "About", href: "#about" },
+          { name: "Skills", href: "#skills" },
+          { name: "Certification", href: "#certification" },
+          { name: "Projects", href: "#projects" },
+          { name: "Experience", href: "#experience" },
+          { name: "Achievements", href: "#achievements" },
+          { name: "Blog", href: "#" },
+          { name: "Contact", href: "#contact" },
+        ].map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="text-gray-100 hover:text-amber-500 transition duration-300"
+            onClick={() => setMenuOpen(false)}
+          >
+            {item.name}
+          </Link>
+        ))}
       </div>
     </nav>
   );
