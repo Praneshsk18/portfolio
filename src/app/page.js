@@ -11,7 +11,6 @@ import Contacts from "./Components/Contacts";
 import { useState,useEffect } from "react";
 import TypewriterComponent from "typewriter-effect";
 import { motion } from "framer-motion";
-import Typist from "react-text-typist";
 
 export default function Home() {
   useEffect(() => {
@@ -30,17 +29,18 @@ export default function Home() {
         }, speed);
         return () => clearTimeout(timeout);
       }
-    }, [index, text, speed]);
+    }, [index]);
   
     return <span>{displayedText}</span>;
   };
   
   return (
-    <div>
+    <div >
       <main>
-        <Header />
+      <motion.div initial={{y:-90}} animate={{y:0}} transition={{ ease:"easeInOut",duration:0.5}}>
+      <Header />
+      </motion.div>
         <div className="flex flex-col">
-          {/* Home Section */}
           <section id="home" className="h-auto mt-28 px-4 md:px-10">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8">
               <div className="pt-10 md:pt-28 pl-4 md:pl-10">
@@ -67,20 +67,19 @@ export default function Home() {
                   </h5>
                   <div className="flex flex-row items-center gap-4 pt-5">
                     {[
-                      { name: "/instalogo.json", href: "https://www.instagram.com/pranesh_sk._?igsh=OW5rc2p6MTg1aHZr" },
-                      { name: "/linkedin.json", href: "https://www.linkedin.com/in/praneshsk/" },
-                      { name: "/twitter.json", href: "https://x.com/i/flow/login?redirect_after_login=%2FPraneshSk18" },
-                      { name: "/github.json", href: "https://github.com/Praneshsk18" },
-                      { name: "/facebook.json", href: "https://www.facebook.com/share/15sVeipnPV/?mibextid=qi2Omg" },
+                      { name: "/instalogo.json", href: "https://www.instagram.com/pranesh_sk._?igsh=OW5rc2p6MTg1aHZr",key:1 },
+                      { name: "/linkedin.json", href: "https://www.linkedin.com/in/praneshsk/",key:2 },
+                      { name: "/twitter.json", href: "https://x.com/i/flow/login?redirect_after_login=%2FPraneshSk18",key:3 },
+                      { name: "/github.json", href: "https://github.com/Praneshsk18",key:4 },
+                      { name: "/facebook.json", href: "https://www.facebook.com/share/15sVeipnPV/?mibextid=qi2Omg",key:5 },
                     ].map((item) => (
                       <Link key={item.href} href={item.href} target="_blank" rel="noopener noreferrer">
-                        <motion.div className="flex rounded-full border border-amber-900/40 justify-center bg-[#181414] text-white transition-all duration-300 hover:bg-[#1a1a2e] hover:scale-110 hover:shadow-[0_0_4px_2px_rgba(0,0,0,0.2)] hover:shadow-amber-600">
+                        <motion.div initial={{opacity:0,x:-10}} whileInView={{opacity:1,x:0}} transition={{delay:item.key*0.3 ,duration:0.2, ease:"easeInOut"}} className="flex rounded-full border border-amber-900/40 justify-center bg-[#181414] text-white transition-all duration-300 hover:bg-amber-800/10 hover:scale-110 hover:shadow-[0_0_4px_2px_rgba(0,0,0,0.2)] hover:shadow-amber-600">
                           <lottie-player
-                            src={item.name}
-                            background="transparent"
-                            speed="1"
+                            src={item.name||item.href}
                             style={{ width: 40, height: 40 }}
                             autoplay
+                            loop
                           ></lottie-player>
                         </motion.div>
                       </Link>
@@ -88,10 +87,10 @@ export default function Home() {
                   </div>
                 </div>
                 <motion.div
-                  initial={{ opacity: 0, x: 0 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2, duration: 1, ease: "easeIn" }}
-                  className="flex pt-10 gap-10 justify-left"
+                  initial={{ opacity: 0, scale:0}}
+                  whileInView={{ opacity: 1, scale:1}}
+                  transition={{ delay: 0.6, duration: 1, ease: "easeInOut" }}
+                  className="flex flex-wrap pt-10 gap-10 justify-left"
                 >
                   <a href="/resume.pdf" rel="noopener noreferrer" target="_blank" download="resume.pdf">
                     <button onClick={() => {
@@ -103,21 +102,20 @@ export default function Home() {
                   </a>
                 </motion.div>
                 <motion.div
-                  initial={{ opacity: 0, y: 50 }} // Start hidden and slightly below
-                  whileInView={{ opacity: 1, y: 0 }} // Animate to fully visible and in place
-                  transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay:0.8,duration: 0.4, ease: "easeInOut" }}
                   className="grid grid-cols-3 mx-auto h-24 w-full md:w-2/3 bg-stone-500/25 mt-16 md:mt-20 rounded-xl mb-5"
                 >
-                  {/* First Column */}
                   <div className="grid grid-rows-2 justify-items-left pl-4 border-r border-stone-500">
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }} // Start hidden and slightly to the left
-                      whileInView={{ opacity: 1, x: 0 }} // Animate to fully visible and in place
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay: 0.2,
-                        duration: 0.8,
-                        ease: "easeOut",
-                      }} // Smooth transition with delay
+                        delay: 1.0,
+                        duration: 0.4,
+                        ease: "easeInOut",
+                      }}
                       className="flex items-center"
                     >
                       <p className="text-base font-bold font-mono text-amber-600 pt-4">
@@ -125,13 +123,13 @@ export default function Home() {
                       </p>
                     </motion.div>
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }} // Start hidden and slightly to the left
-                      whileInView={{ opacity: 1, x: 0 }} // Animate to fully visible and in place
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay: 0.2,
-                        duration: 1.2,
-                        ease: "easeOut",
-                      }} // Smooth transition with delay
+                        delay: 1.2,
+                        duration: 0.4,
+                        ease: "easeInOut",
+                      }}
                       className="flex items-center"
                     >
                       <p className="text-xs text-stone-500 pb-4 font-mono">
@@ -139,17 +137,15 @@ export default function Home() {
                       </p>
                     </motion.div>
                   </div>
-
-                  {/* Second Column */}
                   <div className="grid grid-rows-2 justify-items-left pl-4 border-r border-stone-500">
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }} // Start hidden and slightly to the left
-                      whileInView={{ opacity: 1, x: 0 }} // Animate to fully visible and in place
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay: 0.2,
-                        duration: 0.8,
-                        ease: "easeOut",
-                      }} // Smooth transition with delay
+                        delay: 1.4,
+                        duration: 0.4,
+                        ease: "easeInOut",
+                      }}
                       className="flex items-center"
                     >
                       <p className="font-bold font-mono text-amber-600 pt-4">
@@ -157,13 +153,13 @@ export default function Home() {
                       </p>
                     </motion.div>
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }} // Start hidden and slightly to the left
-                      whileInView={{ opacity: 1, x: 0 }} // Animate to fully visible and in place
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay: 0.2,
-                        duration: 1.2,
-                        ease: "easeOut",
-                      }} // Smooth transition with delay
+                        delay: 1.6,
+                        duration: 0.4,
+                        ease: "easeInOut",
+                      }}
                       className="flex items-center"
                     >
                       <p className="text-stone-500 text-xs pb-4 font-mono">
@@ -171,17 +167,15 @@ export default function Home() {
                       </p>
                     </motion.div>
                   </div>
-
-                  {/* Third Column */}
                   <div className="grid grid-rows-2 justify-items-left pl-4 border-stone-500">
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }} // Start hidden and slightly to the left
-                      whileInView={{ opacity: 1, x: 0 }} // Animate to fully visible and in place
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay: 0.2,
-                        duration: 0.8,
-                        ease: "easeOut",
-                      }} // Smooth transition with delay
+                        delay: 1.8,
+                        duration: 0.4,
+                        ease: "easeInOut",
+                      }}
                       className="flex items-center"
                     >
                       <p className="font-bold font-mono text-amber-600 pt-4">
@@ -189,13 +183,13 @@ export default function Home() {
                       </p>
                     </motion.div>
                     <motion.div
-                      initial={{ opacity: 0, x: -20 }} // Start hidden and slightly to the left
-                      whileInView={{ opacity: 1, x: 0 }} // Animate to fully visible and in place
+                      initial={{ opacity: 0, x: -30 }}
+                      whileInView={{ opacity: 1, x: 0 }}
                       transition={{
-                        delay: 0.2,
-                        duration: 0.8,
-                        ease: "easeOut",
-                      }} // Smooth transition with delay
+                        delay: 2,
+                        duration: 0.4,
+                        ease: "easeInOut",
+                      }}
                       className="flex items-center"
                     >
                       <p className="text-stone-500 text-xs pb-4 font-mono">
@@ -206,10 +200,10 @@ export default function Home() {
                 </motion.div>
               </div>
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 1, ease: "linear" }}
-                className="flex justify-center items-center min-h-[50vh] md:min-h-scree"
+                initial={{ opacity: 0,scale:0}}
+                whileInView={{ opacity: 1,scale:1}}
+                transition={{ delay: 0.2, duration: 1 , ease:"easeInOut"}}
+                className="flex justify-center items-center min-h-[50vh] md:min-h-screen"
               >
                 <lottie-player
                   src="\profile.json"
@@ -222,24 +216,22 @@ export default function Home() {
               </motion.div>
             </div>
           </section>
-
-          {/* About Section */}
           <section id="about" className="h-auto px-4 md:px-20">
             <motion.div
-              initial={{ opacity: 0, z: -20 }}
-              whileInView={{ opacity: 1, z: 0 }}
-              transition={{ duration: 1 }}
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 ,ease:"easeInOut"}}
               className="text-center pt-10 md:pt-24"
             >
-              <h1 className="font-bold text-4xl md:text-5xl text-yellow-800">
+              <h1 className="font-bold text-4xl md:text-5xl text-yellow-600">
                 About Me
               </h1>
             </motion.div>
             <div className="w-full mt-8 md:mt-12">
               <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
+                initial={{ opacity: 0, scale:0 }}
+                whileInView={{ opacity: 1,scale:1}}
+                transition={{ duration: 0.5 }}
                 className="mx-auto"
               >
                 <p className="text-zinc-300 text-sm md:text-base">
@@ -262,16 +254,26 @@ export default function Home() {
                 </p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                translate={{ duration: 0.5 }}
+                initial={{ opacity: 0, scale:0 }}
+                whileInView={{ opacity: 1, scale:1 }}
+                transition={{ delay:0.1,duration: 0.5 ,ease:"easeInOut"}}
                 className="grid md:grid-cols-3 bg-stone-800 mt-10 md:mt-20 rounded-xl p-5 md:pb-10 items-stretch"
               >
-                {/* Core Values - Left Side */}
                 <div className="border-b-2 md:border-b-0 md:border-r-2 border-amber-600 p-6 h-full">
-                  <p className="font-bold text-yellow-600 shadow-md rounded px-3 py-1 shadow-amber-500">
+                <motion.div 
+                initial={{opacity:0,scale:0}}
+                whileInView={{opacity:1,scale:1}}
+                transition={{delay:0.3,duration:0.5,ease:"easeInOut"}}
+                >
+                <p className="font-bold text-yellow-600 shadow-md rounded px-3 py-1 shadow-amber-500">
                     Core Values
                   </p>
+                </motion.div>
+                <motion.div
+                initial={{opacity:0,scale:0}}
+                whileInView={{opacity:1,scale:1}}
+                transition={{delay:0.6,duration:0.6,ease:"easeInOut"}}
+                >
                   <p className="pt-3 text-zinc-300">
                     Curiosity: I am constantly exploring emerging technologies
                     like AI, cloud computing, and web development to stay at the
@@ -286,13 +288,23 @@ export default function Home() {
                     frameworks, databases, and cloud services, I am adept at
                     navigating dynamic environments.
                   </p>
+                  </motion.div>
                 </div>
-
-                {/* Fun Facts - Middle */}
                 <div className="border-b-2 md:border-b-0 md:border-x-2 border-amber-800 p-6 h-full">
+                <motion.div 
+                initial={{opacity:0,scale:0}}
+                whileInView={{opacity:1,scale:1}}
+                transition={{delay:0.5,duration:0.5,ease:"easeInOut"}}
+                >
                   <p className="font-bold text-blue-600 shadow-md rounded px-3 py-1 shadow-blue-500">
                     Fun Facts About Me
                   </p>
+                  </motion.div>
+                  <motion.div
+                  initial={{opacity:0,scale:0}}
+                  whileInView={{opacity:1,scale:1}}
+                  transition={{delay:0.8,duration:0.6,ease:"easeInOut"}}
+                  >
                   <p className="pt-3 text-zinc-300">
                     - I enjoy contributing to personal projects, such as
                     creating a To-Do App and maintaining a Personal Blog, which
@@ -303,13 +315,23 @@ export default function Home() {
                     experimenting with cloud automation tools, and keeping up
                     with tech trends.
                   </p>
+                  </motion.div>
                 </div>
-
-                {/* Looking Ahead - Right Side */}
                 <div className=" md:border-l-2 border-amber-600 p-6 h-full">
-                  <p className="font-bold text-red-600 shadow-md rounded px-3 py-1 shadow-red-500">
+                <motion.div
+                initial={{opacity:0,scale:0}}
+                whileInView={{opacity:1,scale:1}}
+                transition={{delay:0.7,duration:0.5,ease:"easeInOut"}}
+                >
+                <p className="font-bold text-red-600 shadow-md rounded px-3 py-1 shadow-red-500">
                     Looking Ahead
                   </p>
+                </motion.div>
+                <motion.div
+                initial={{opacity:0,scale:0}}
+                whileInView={{opacity:1,scale:1}}
+                transition={{delay:1,duration:0.6,ease:"easeInOut"}}
+                >
                   <p className="pt-3 text-zinc-300">
                     My career aspirations lie in the fields of artificial
                     intelligence, cloud engineering, and full-stack development.
@@ -320,27 +342,26 @@ export default function Home() {
                     committed to growing as a professional and making meaningful
                     contributions.
                   </p>
+                  </motion.div>
                 </div>
               </motion.div>
             </div>
           </section>
-
-          {/* Skills Section */}
           <section id="skills" className="h-auto px-10 md:px-32">
             <div>
               <motion.div
-                initial={{ opacity: 0, z: -30 }}
-                whileInView={{ opacity: 1, z: 0 }}
-                transition={{ duration: 0.5 }}
+                initial={{ opacity: 0, x:-40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.2 }}
               >
-                <p className="flex justify-center font-bold text-4xl md:text-5xl text-yellow-800 mt-20">
+                <p className="flex justify-center font-bold text-4xl md:text-5xl text-yellow-600 mt-20">
                   Skills
                 </p>
               </motion.div>
               <motion.div
-                initial={{ opacity: 0, z: -30 }}
-                whileInView={{ opacity: 1, z: 0 }}
-                transition={{ duration: 0.7 }}
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3 }}
               >
                 <p className="flex justify-center pt-5 text-xl md:text-2xl font-semibold text-gray-400">
                   Technical Skills
@@ -348,9 +369,9 @@ export default function Home() {
               </motion.div>
               <SkillSection />
               <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.4 }}
+                initial={{ opacity: 0 ,x: -30 }}
+                whileInView={{ opacity: 1 ,x: 0 }}
+                transition={{ duration: 0.3 }}
                 className="flex justify-center"
               >
                 <h3 className="text-xl md:text-2xl font-semibold mb-8 text-gray-400">
@@ -363,35 +384,35 @@ export default function Home() {
 
           <section id="certification" className="h-auto px-4 md:px-10">
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
+              initial={{ opacity: 0, scale:0}}
+              whileInView={{ opacity: 1 ,scale:1}}
+              transition={{ duration: 0.6 }}
             >
-              <p className="flex justify-center font-bold text-5xl text-amber-700 mt-20 mb-5">
+              <p className="flex justify-center font-bold text-5xl text-yellow-600 mt-20 mb-5">
                 Certification
               </p>
             </motion.div>
             <Certificates />
           </section>
-
-          {/* Projects Section */}
           <section id="projects" className="h-auto px-4 md:px-10">
-            <motion.div>
-              <h1 className="flex justify-center font-bold text-4xl md:text-5xl text-yellow-800 mt-20">
+            <motion.div 
+            initial={{opacity:0,scale:0}}
+            whileInView={{opacity:1,scale:1}}
+            transition={{duration:0.5}}
+            >
+              <h1 className="flex justify-center font-bold text-4xl md:text-5xl text-yellow-600 mt-20">
                 Projects
               </h1>
             </motion.div>
             <Projects />
           </section>
-
-          {/* Experience Section */}
           <section id="experience" className="h-auto  px-4 md:px-10 ">
             <div className="flex justify-center">
               <motion.div
-                initial={{ opacity: 0, z: 20 }}
-                whileInView={{ opacity: 1, z: 0 }}
+                initial={{ opacity: 0, x: -200 }}
+                whileInView={{ opacity: 1, x: 0 }}
               >
-                <p className="font-bold text-4xl md:text-5xl mt-24 text-amber-700 ">
+                <p className="font-bold text-4xl md:text-5xl mt-24 text-yellow-600 ">
                   Experience
                 </p>
               </motion.div>
@@ -400,13 +421,9 @@ export default function Home() {
               <Experience />
             </div>
           </section>
-
-          {/* Achievements Section */}
           <section id="achievements" className="h-auto">
             <Achievements />
           </section>
-
-          {/* Contact Section */}
           <section id="contact" className="h-auto bg-black-200 ">
             <Contacts />
           </section>

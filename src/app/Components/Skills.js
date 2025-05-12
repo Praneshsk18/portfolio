@@ -1,84 +1,96 @@
 const skills = {
   technical: [
-    { name: "Python", url: "/python.png",id:1 },
-    { name: "JavaScript", url: "/javascript.png",id:2 },
-    { name: "React.js", url: "/react.png",id:3 },
-    { name: "Node.js", url: "/node.png",id:4 },
-    { name: "Java", url: "/java.png",id:5 },
-    { name: "PHP", url: "/php.png",id:6 },
-    { name: "Express.js", url: "/express.png",id:7 },
-    { name: "MongoDb", url: "/mongodb.png",id:8 },
-    { name: "Mysql", url: "/mysql.png",id:9 },
-    { name: "Git", url: "/github.png",id:10 },
-    { name: "AWS", url: "/aws.png",id:11 },
+    { name: "Python", url: "/python.png", id: 1 },
+    { name: "JavaScript", url: "/javascript.png", id: 2 },
+    { name: "React.js", url: "/react.png", id: 3 },
+    { name: "Node.js", url: "/node.png", id: 4 },
+    { name: "Java", url: "/java.png", id: 5 },
+    { name: "PHP", url: "/php.png", id: 6 },
+    { name: "Express.js", url: "/express.png", id: 7 },
+    { name: "MongoDb", url: "/mongodb.png", id: 8 },
+    { name: "Mysql", url: "/mysql.png", id: 9 },
+    { name: "Git", url: "/github.png", id: 10 },
+    { name: "AWS", url: "/aws.png", id: 11 },
   ],
   soft: [
-    {name:"Teamwork",id:1},
-    {name:"Problem-Solving",id:2},
-    {name:"Communication",id:3},
-    {name:"Adaptability",id:4},
-    {name:"Leadership",id:5},
+    { name: "Teamwork", id: 1 },
+    { name: "Problem-Solving", id: 2 },
+    { name: "Communication", id: 3 },
+    { name: "Adaptability", id: 4 },
+    { name: "Leadership", id: 5 },
   ],
   Certifications: [
     {
       name: "Javascript",
       issued: "Scaler",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/js%20certificate.png",
+      about:"In recognition of the completion of the tutorial:JavaScript Course With Certification:Unlocking the Power of JavaScript",
     },
     {
       name: "Machine Learning",
       issued: "Scaler",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/ML%20certificate.png",
+      about:"In recognition of the completion of the tutorial:Free Maths for Machine Learning Courses",
     },
     {
       name: "Machine Learning",
       issued: "SWAYAM",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/NPTEL%20ML.png",
+      about:"SWAYAM,NPTEL online certification for the completion of Introduction to Machine Learning Certification in Elite grade"
     },
     {
       name: "Java",
       issued: "SWAYAM",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/NPTEL%20Java.png",
+      about:"SWAYAM,NPTEL online certification for the completion of Programming in Java Certification",
     },
     {
       name: "GitBash",
       issued: "Udemy",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/gitbash.jpg",
+      about:"Certificate of Completion in Git Bash Basics from Udemy",
     },
     {
       name: "Java",
       issued: "Udemy",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/j.jpg",
+      about:"Certificate of Completion in Java Complete Course using VS Code from Udemy"
     },
     {
       name: "Javascript",
       issued: "Udemy",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/javascript.jpg",
+      about:"Certificate of Completion in Javascript for Beginners - The Complete introduction to JS from Udemy"
     },
     {
       name: "Linux",
       issued: "Udemy",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/linux.jpg",
+      about:"Certificate of Completion in Linux Terminal for beginners from Udemy"
     },
     {
       name: "Node.js",
       issued: "Udemy",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/Nodejs.jpg",
+      about:"Certificate of Completion in NodeJS Masterclass (Express, MongoDB, OpenAI) - 2024 from Udemy"
     },
     {
       name: "PHP",
       issued: "Udemy",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/php.jpg",
+      about:"Certificate of Completion in PHP for Beginners:PHP Crash Course from Udemy"
     },
     {
       name: "Ubuntu",
       issued: "Udemy",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/ubuntu.jpg",
+      about:"Certificate of Completion in the Complete Ubuntu Linux Server Administration Course from Udemy"
     },
     {
       name: "Github",
       issued: "Udemy",
       url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/github.jpg",
+      about:"Certification of Completion of Github Basics from Udemy"
     },
   ],
   Projects: [
@@ -118,36 +130,42 @@ const skills = {
       link: "http://blog-omega-teal-11.vercel.app",
     },
   ],
-  Experience:[
+  Experience: [
     {
-      role:"Networking Engineer Intern",
-      company:"Integra Survillence Pvt. Ltd.",
-      date:"June 2023 - July 2023",
-      description:"Monitored and resolved network performance issues using tools like Wireshark and SolarWinds to optimize connectivity and bandwidth.",
-    },{
-      role:"Cloud Engineer Intern",
-      company:"Accent Techno Softs Pvt. Ltd.",
-      date:"June 2024 - July 2024",
-      description:" Designed and automated scalable cloud infrastructure with AWS, Azure, or GCP using tools like Terraform, Ansible, and CI/CD pipelines to enhance performance and consistency across environments"
-    }
-  ],
-  Achievements:[
-    {
-      head:"Scout",
-      cont1:"Cadet in Scout",
-      cont2:"I actively participated as a scout during my school years, fostering teamwork, discipline, and leadership skills"
+      role: "Networking Engineer Intern",
+      company: "Integra Survillence Pvt. Ltd.",
+      date: "June 2023 - July 2023",
+      description:
+        "Monitored and resolved network performance issues using tools like Wireshark and SolarWinds to optimize connectivity and bandwidth.",
     },
     {
-      head:"1st",
-      cont1:"In Quiz Competition",
-      cont2:"Secured first place in a quiz competition held at Christ College, Puducherry, showcasing my knowledge and quick thinking skills."
-    },{
-      head:"NCC",
-      cont1:"B Certificate",
-      cont2:"Proudly served as an NCC cadet in college, developing leadership, discipline, and a strong sense of national responsibility"
-    }
-
-  ]
+      role: "Cloud Engineer Intern",
+      company: "Accent Techno Softs Pvt. Ltd.",
+      date: "June 2024 - July 2024",
+      description:
+        " Designed and automated scalable cloud infrastructure with AWS, Azure, or GCP using tools like Terraform, Ansible, and CI/CD pipelines to enhance performance and consistency across environments",
+    },
+  ],
+  Achievements: [
+    {
+      head: "Scout",
+      cont1: "Cadet in Scout",
+      cont2:
+        "I actively participated as a scout during my school years, fostering teamwork, discipline, and leadership skills",
+    },
+    {
+      head: "1st",
+      cont1: "In Quiz Competition",
+      cont2:
+        "Secured first place in a quiz competition held at Christ College, Puducherry, showcasing my knowledge and quick thinking skills.",
+    },
+    {
+      head: "NCC",
+      cont1: "B Certificate",
+      cont2:
+        "Proudly served as an NCC cadet in college, developing leadership, discipline, and a strong sense of national responsibility",
+    },
+  ],
 };
 
 export default skills;

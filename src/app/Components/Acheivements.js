@@ -2,9 +2,9 @@ import skills from "./Skills";
 import { motion } from "framer-motion";
 const Achievements = () => {
   return (
-    <div>
-      <motion.div initial={{opacity:0,z:20}} whileInView={{opacity:1,z:0}} className="flex justify-center">
-        <p className="font-bold text-4xl md:text-5xl text-amber-700 mb-10 mt-24">
+    <div className="bg-[]">
+      <motion.div initial={{opacity:0,scale:0}} whileInView={{opacity:1,scale:1}} transition={{duration:2,ease:"easeInOut"}} className="flex justify-center">
+        <p className="font-bold text-4xl md:text-5xl text-yellow-600 mb-10 mt-24">
           Achievements
         </p>
       </motion.div>
