@@ -12,6 +12,7 @@ const Certificates = () => {
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
+            viewport={{ once: true }}
             key={index}
             className="flex flex-wrap"
           >
@@ -21,7 +22,6 @@ const Certificates = () => {
                 href={c.url}
               >
                 <div className="relative z-20 h-auto overflow-hidden rounded-[inherit] bg-amber-950/10 after:absolute after:inset-0 after:bg-linear-to-br after:from-gray-900/50 after:via-gray-800/25 after:to-gray-900/50">
-                  {/* Arrow */}
                   <div
                     className="absolute right-6 top-6 flex h-8 w-8 items-center justify-center rounded-full border border-gray-700 bg-gray-950 text-gray-200 opacity-0 transition-opacity group-hover/card:opacity-100"
                     aria-hidden="true"
@@ -60,7 +60,7 @@ const Certificates = () => {
                         </span>
                       </span>
                     </div>
-                    <p className="text-indigo-200/65 lg:text-base text-xs">
+                    <p className="text-indigo-200/65 lg:text-base text-sm">
                       {c.about}
                     </p>
                   </div>

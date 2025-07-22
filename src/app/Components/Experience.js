@@ -9,6 +9,7 @@ const Experience = () => {
           initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, ease: "linear" }}
+          viewport={{once:true}}
           key={key}
           className="relative flex flex-col gap-5 bg-red-500/5 shadow-lg rounded-lg p-6 border-l-4 border-amber-500 hover:shadow-2xl transition-all duration-300"
         >

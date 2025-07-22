@@ -38,9 +38,10 @@ const Contacts = () => {
       <motion.div
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
+        viewport={{once:true}}
         className="text-center"
       >
-        <p className="font-bold text-4xl md:text-5xl text-yellow-600 mb-10 mt-10">
+        <p className="font-bold text-4xl md:text-5xl text-amber-600 mb-10 mt-10">
           Contact Me
         </p>
         <p className="text-lg text-gray-300">
@@ -52,10 +53,11 @@ const Contacts = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
+          viewport={{once:true}}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="bg-gray-600/30 p-6 rounded-lg shadow-lg"
         >
-          <h2 className="text-2xl font-bold text-amber-500 mb-6">
+          <h2 className="text-2xl font-bold text-amber-600 mb-6">
             Send a Message
           </h2>
           <form onSubmit={additem}>
@@ -109,10 +111,11 @@ const Contacts = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
+          viewport={{once:true}}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-gray-600/30 p-6 rounded-lg shadow-lg"
         >
-          <h2 className="text-2xl font-bold text-amber-500 mb-6">
+          <h2 className="text-2xl font-bold text-amber-600 mb-6">
             Contact Details
           </h2>
           <div className="space-y-4">

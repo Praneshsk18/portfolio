@@ -41,7 +41,7 @@ export default function Home() {
       <Header />
       </motion.div>
         <div className="flex flex-col">
-          <section id="home" className="h-auto mt-28 px-4 md:px-10">
+          <section id="home" className="h-auto mt-[70px] px-4 md:px-10">
             <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8">
               <div className="pt-10 md:pt-28 pl-4 md:pl-10">
                 <div className="animate-fadeIn">
@@ -51,13 +51,12 @@ export default function Home() {
                   <p className="pt-5 text-2xl text-stone-400 font-bold font-sans">
                   <Typewriter text="Pranesh S" speed={200} />
                   </p>
-                  <h5 className="pt-5 text-4xl md:text-5xl font-bold text-amber-700">
+                  <h5 className="pt-5 text-4xl md:text-5xl font-bold text-amber-600">
                     <TypewriterComponent
                       options={{
                         strings: [
-                          "SOFTWARE DEVELOPER",
-                          "FREELANCER",
-                          "MERN-STACK ENGINEER",
+                          "FULL-STACK DEVELOPER",
+                          "JAVA DEVELOPER",
                         ],
                         autoStart: true,
                         loop: true,
@@ -74,7 +73,7 @@ export default function Home() {
                       { name: "/facebook.json", href: "https://www.facebook.com/share/15sVeipnPV/?mibextid=qi2Omg",key:5 },
                     ].map((item) => (
                       <Link key={item.href} href={item.href} target="_blank" rel="noopener noreferrer">
-                        <motion.div initial={{opacity:0,x:-10}} whileInView={{opacity:1,x:0}} transition={{delay:item.key*0.3 ,duration:0.2, ease:"easeInOut"}} className="flex rounded-full border border-amber-900/40 justify-center bg-[#181414] text-white transition-all duration-300 hover:bg-amber-800/10 hover:scale-110 hover:shadow-[0_0_4px_2px_rgba(0,0,0,0.2)] hover:shadow-amber-600">
+                        <motion.div initial={{opacity:0,x:-10}} viewport={{once:true}} whileInView={{opacity:1,x:0}} transition={{delay:item.key*0.3 ,duration:0.2, ease:"easeInOut"}} className="flex rounded-full border border-amber-900/40 justify-center bg-[#181414] text-white transition-all duration-300 hover:bg-amber-800/10 hover:scale-110 hover:shadow-[0_0_4px_2px_rgba(0,0,0,0.2)] hover:shadow-amber-600">
                           <lottie-player
                             src={item.name||item.href}
                             style={{ width: 40, height: 40 }}
@@ -89,6 +88,7 @@ export default function Home() {
                 <motion.div
                   initial={{ opacity: 0, scale:0}}
                   whileInView={{ opacity: 1, scale:1}}
+                  viewport={{once:true}}
                   transition={{ delay: 0.6, duration: 1, ease: "easeInOut" }}
                   className="flex flex-wrap pt-10 gap-10 justify-left"
                 >
@@ -104,6 +104,7 @@ export default function Home() {
                 <motion.div
                   initial={{ opacity: 0, y: 50 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{once:true}}
                   transition={{ delay:0.8,duration: 0.4, ease: "easeInOut" }}
                   className="grid grid-cols-3 mx-auto h-24 w-full md:w-2/3 bg-stone-500/25 mt-16 md:mt-20 rounded-xl mb-5"
                 >
@@ -111,6 +112,7 @@ export default function Home() {
                     <motion.div
                       initial={{ opacity: 0, x: -30 }}
                       whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{once:true}}
                       transition={{
                         delay: 1.0,
                         duration: 0.4,
@@ -125,6 +127,7 @@ export default function Home() {
                     <motion.div
                       initial={{ opacity: 0, x: -30 }}
                       whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{once:true}}
                       transition={{
                         delay: 1.2,
                         duration: 0.4,
@@ -132,7 +135,7 @@ export default function Home() {
                       }}
                       className="flex items-center"
                     >
-                      <p className="text-xs text-stone-500 pb-4 font-mono">
+                      <p className="text-xs text-stone-400 pb-4 font-mono">
                         Experience
                       </p>
                     </motion.div>
@@ -140,6 +143,7 @@ export default function Home() {
                   <div className="grid grid-rows-2 justify-items-left pl-4 border-r border-stone-500">
                     <motion.div
                       initial={{ opacity: 0, x: -30 }}
+                      viewport={{once:true}}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{
                         delay: 1.4,
@@ -154,6 +158,7 @@ export default function Home() {
                     </motion.div>
                     <motion.div
                       initial={{ opacity: 0, x: -30 }}
+                      viewport={{once:true}}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{
                         delay: 1.6,
@@ -162,7 +167,7 @@ export default function Home() {
                       }}
                       className="flex items-center"
                     >
-                      <p className="text-stone-500 text-xs pb-4 font-mono">
+                      <p className="text-stone-400 text-xs pb-4 font-mono">
                         Projects
                       </p>
                     </motion.div>
@@ -171,6 +176,7 @@ export default function Home() {
                     <motion.div
                       initial={{ opacity: 0, x: -30 }}
                       whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{once:true}}
                       transition={{
                         delay: 1.8,
                         duration: 0.4,
@@ -185,6 +191,7 @@ export default function Home() {
                     <motion.div
                       initial={{ opacity: 0, x: -30 }}
                       whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{once:true}}
                       transition={{
                         delay: 2,
                         duration: 0.4,
@@ -192,7 +199,7 @@ export default function Home() {
                       }}
                       className="flex items-center"
                     >
-                      <p className="text-stone-500 text-xs pb-4 font-mono">
+                      <p className="text-stone-400 text-xs pb-4 font-mono">
                         Internships
                       </p>
                     </motion.div>
@@ -202,8 +209,9 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0,scale:0}}
                 whileInView={{ opacity: 1,scale:1}}
+                viewport={{once:true}}
                 transition={{ delay: 0.2, duration: 1 , ease:"easeInOut"}}
-                className="flex justify-center items-center min-h-[50vh] md:min-h-screen"
+                className="flex justify-center items-center max-h-auto md:min-h-screen my-0"
               >
                 <lottie-player
                   src="\profile.json"
@@ -221,9 +229,10 @@ export default function Home() {
               initial={{ opacity: 0, x: -100 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 ,ease:"easeInOut"}}
+              viewport={{once:true}}
               className="text-center pt-10 md:pt-24"
             >
-              <h1 className="font-bold text-4xl md:text-5xl text-yellow-600">
+              <h1 className="font-bold text-4xl md:text-5xl text-amber-600">
                 About Me
               </h1>
             </motion.div>
@@ -232,9 +241,10 @@ export default function Home() {
                 initial={{ opacity: 0, scale:0 }}
                 whileInView={{ opacity: 1,scale:1}}
                 transition={{ duration: 0.5 }}
+                viewport={{once:true}}
                 className="mx-auto"
               >
-                <p className="text-zinc-300 text-sm md:text-base">
+                <p className="text-zinc-300 text-sm md:text-base font-sans mx-10 md:mx-5">
                   I am Pranesh S, a passionate and driven IT student with
                   expertise in Python, Java, TensorFlow, and the MERN stack. I
                   thrive at the intersection of creativity and technology,
@@ -257,12 +267,14 @@ export default function Home() {
                 initial={{ opacity: 0, scale:0 }}
                 whileInView={{ opacity: 1, scale:1 }}
                 transition={{ delay:0.1,duration: 0.5 ,ease:"easeInOut"}}
+                viewport={{once:true}}
                 className="grid md:grid-cols-3 bg-stone-800 mt-10 md:mt-20 rounded-xl p-5 md:pb-10 items-stretch"
               >
                 <div className="border-b-2 md:border-b-0 md:border-r-2 border-amber-600 p-6 h-full">
                 <motion.div 
                 initial={{opacity:0,scale:0}}
                 whileInView={{opacity:1,scale:1}}
+                viewport={{once:true}}
                 transition={{delay:0.3,duration:0.5,ease:"easeInOut"}}
                 >
                 <p className="font-bold text-yellow-600 shadow-md rounded px-3 py-1 shadow-amber-500">
@@ -272,6 +284,7 @@ export default function Home() {
                 <motion.div
                 initial={{opacity:0,scale:0}}
                 whileInView={{opacity:1,scale:1}}
+                viewport={{once:true}}
                 transition={{delay:0.6,duration:0.6,ease:"easeInOut"}}
                 >
                   <p className="pt-3 text-zinc-300">
@@ -293,6 +306,7 @@ export default function Home() {
                 <div className="border-b-2 md:border-b-0 md:border-x-2 border-amber-800 p-6 h-full">
                 <motion.div 
                 initial={{opacity:0,scale:0}}
+                viewport={{once:true}}
                 whileInView={{opacity:1,scale:1}}
                 transition={{delay:0.5,duration:0.5,ease:"easeInOut"}}
                 >
@@ -302,6 +316,7 @@ export default function Home() {
                   </motion.div>
                   <motion.div
                   initial={{opacity:0,scale:0}}
+                  viewport={{once:true}}
                   whileInView={{opacity:1,scale:1}}
                   transition={{delay:0.8,duration:0.6,ease:"easeInOut"}}
                   >
@@ -320,6 +335,7 @@ export default function Home() {
                 <div className=" md:border-l-2 border-amber-600 p-6 h-full">
                 <motion.div
                 initial={{opacity:0,scale:0}}
+                viewport={{once:true}}
                 whileInView={{opacity:1,scale:1}}
                 transition={{delay:0.7,duration:0.5,ease:"easeInOut"}}
                 >
@@ -329,6 +345,7 @@ export default function Home() {
                 </motion.div>
                 <motion.div
                 initial={{opacity:0,scale:0}}
+                viewport={{once:true}}
                 whileInView={{opacity:1,scale:1}}
                 transition={{delay:1,duration:0.6,ease:"easeInOut"}}
                 >
@@ -352,15 +369,17 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, x:-40 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                viewport={{once:true}}
                 transition={{ duration: 0.2 }}
               >
-                <p className="flex justify-center font-bold text-4xl md:text-5xl text-yellow-600 mt-20">
+                <p className="flex justify-center font-bold text-4xl md:text-4xl text-amber-600 mt-20">
                   Skills
                 </p>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
+                viewport={{once:true}}
                 transition={{ duration: 0.3 }}
               >
                 <p className="flex justify-center pt-5 text-xl md:text-2xl font-semibold text-gray-400">
@@ -371,10 +390,11 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0 ,x: -30 }}
                 whileInView={{ opacity: 1 ,x: 0 }}
+                viewport={{once:true}}
                 transition={{ duration: 0.3 }}
                 className="flex justify-center"
               >
-                <h3 className="text-xl md:text-2xl font-semibold mb-8 text-gray-400">
+                <h3 className="text-xl md:text-2xl font-semibold my-2 text-gray-400">
                   Soft Skills
                 </h3>
               </motion.div>
@@ -386,9 +406,10 @@ export default function Home() {
             <motion.div
               initial={{ opacity: 0, scale:0}}
               whileInView={{ opacity: 1 ,scale:1}}
+              viewport={{once:true}}
               transition={{ duration: 0.6 }}
             >
-              <p className="flex justify-center font-bold text-5xl text-yellow-600 mt-20 mb-5">
+              <p className="flex justify-center font-bold text-4xl text-amber-600 mt-20 mb-5">
                 Certification
               </p>
             </motion.div>
@@ -398,6 +419,7 @@ export default function Home() {
             <motion.div 
             initial={{opacity:0,scale:0}}
             whileInView={{opacity:1,scale:1}}
+            viewport={{once:true}}
             transition={{duration:0.5}}
             >
               <h1 className="flex justify-center font-bold text-4xl md:text-5xl text-yellow-600 mt-20">
@@ -410,9 +432,10 @@ export default function Home() {
             <div className="flex justify-center">
               <motion.div
                 initial={{ opacity: 0, x: -200 }}
+                viewport={{once:true}}
                 whileInView={{ opacity: 1, x: 0 }}
               >
-                <p className="font-bold text-4xl md:text-5xl mt-24 text-yellow-600 ">
+                <p className="font-bold text-4xl md:text-5xl mt-24 text-amber-600 ">
                   Experience
                 </p>
               </motion.div>
