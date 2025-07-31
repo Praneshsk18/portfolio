@@ -112,7 +112,7 @@ const skills = {
     {
       name: "Ubuntu",
       issued: "Udemy",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/ubuntu.jpg",
+      url: "/certificates/ubuntu.jpg",
       about:"Certificate of Completion in the Complete Ubuntu Linux Server Administration Course from Udemy"
     },
     {
