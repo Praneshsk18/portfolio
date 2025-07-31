@@ -1,16 +1,15 @@
 const skills = {
   technical: [
-    { name: "Python", url: "/python.png", id: 1 },
-    { name: "JavaScript", url: "/javascript.png", id: 2 },
-    { name: "React.js", url: "/react.png", id: 3 },
-    { name: "Node.js", url: "/node.png", id: 4 },
-    { name: "Java", url: "/java.png", id: 5 },
-    { name: "PHP", url: "/php.png", id: 6 },
-    { name: "Express.js", url: "/express.png", id: 7 },
-    { name: "MongoDb", url: "/mongodb.png", id: 8 },
-    { name: "Mysql", url: "/mysql.png", id: 9 },
-    { name: "Git", url: "/github.png", id: 10 },
-    { name: "AWS", url: "/aws.png", id: 11 },
+    { name: "Python", url: "/skillslogo/python.png", id: 1 },
+    { name: "JavaScript", url: "/skillslogo/javascript.png", id: 2 },
+    { name: "React.js", url: "/skillslogo/react.png", id: 3 },
+    { name: "Node.js", url: "/skillslogo/node.png", id: 4 },
+    { name: "Java", url: "/skillslogo/java.png", id: 5 },
+    { name: "Express.js", url: "/skillslogo/express.png", id: 6 },
+    { name: "MongoDb", url: "/skillslogo/mongodb.png", id: 7 },
+    { name: "Mysql", url: "/skillslogo/mysql.png", id: 8 },
+    { name: "Git", url: "/skillslogo/github.png", id: 9 },
+    { name: "AWS", url: "/skillslogo/aws.png", id: 10 },
   ],
   soft: [
     { name: "Teamwork", id: 1 },
@@ -23,61 +22,91 @@ const skills = {
     {
       name: "Javascript",
       issued: "Scaler",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/js%20certificate.png",
-      about:"In recognition of the completion of the tutorial:JavaScript Course With Certification:Unlocking the Power of JavaScript",
+      url: "/certificates/javascript course.jpg",
+      about:"In recognition of the completion of the tutorial: JavaScript Certification Course",
     },
     {
       name: "Machine Learning",
       issued: "Scaler",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/ML%20certificate.png",
-      about:"In recognition of the completion of the tutorial:Free Maths for Machine Learning Courses",
+      url: "/certificates/maths for ml.jpg",
+      about:"In recognition of the completion of the tutorial: Maths for Machine Learning",
+    },
+    {
+      name: "Node.js",
+      issued: "Scaler",
+      url: "/certificates/node.js certificate.jpg",
+      about:"In recognition of the completion of the tutorial: Node JS Certification Course",
     },
     {
       name: "Machine Learning",
       issued: "SWAYAM",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/NPTEL%20ML.png",
+      url: "/certificates/Introduction to Machine Learning_page-0001.jpg",
       about:"SWAYAM,NPTEL online certification for the completion of Introduction to Machine Learning Certification in Elite grade"
     },
     {
       name: "Java",
       issued: "SWAYAM",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/NPTEL%20Java.png",
+      url: "/certificates/Programming In Java_page-0001.jpg",
       about:"SWAYAM,NPTEL online certification for the completion of Programming in Java Certification",
+    },
+    {
+      name: "AI & ML",
+      issued: "Udemy",
+      url: "/certificates/aiml starter.jpg",
+      about:"Certificate of Completion in Artificial Intelligence and Machine Learning with no code from Udemy",
+    },
+    {
+      name: "AI & ML",
+      issued: "Udemy",
+      url: "/certificates/aiml beginner.jpg",
+      about:"Certificate of Completion of Introduction to Artificial Intelligence and Machine Learning from Udemy",
+    },
+    {
+      name: "AI & ML",
+      issued: "Udemy",
+      url: "/certificates/ai essentials.jpg",
+      about:"Certificate of Completion of the essentials in Artificial Intelligence from Udemy",
+    },
+    {
+      name: "Java",
+      issued: "Udemy",
+      url: "/certificates/java a-z bootcamp.jpg",
+      about:"Certificate of Completion of A-Z from Core and Advanced Java Visually from Udemy",
     },
     {
       name: "GitBash",
       issued: "Udemy",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/gitbash.jpg",
+      url: "/certificates/github basics.jpg",
       about:"Certificate of Completion in Git Bash Basics from Udemy",
     },
     {
       name: "Java",
       issued: "Udemy",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/j.jpg",
+      url: "/certificates/java using vs.jpg",
       about:"Certificate of Completion in Java Complete Course using VS Code from Udemy"
     },
     {
       name: "Javascript",
       issued: "Udemy",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/javascript.jpg",
+      url: "/certificates/js complete.jpg",
       about:"Certificate of Completion in Javascript for Beginners - The Complete introduction to JS from Udemy"
     },
     {
       name: "Linux",
       issued: "Udemy",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/linux.jpg",
+      url: "/certificates/linux terminal.jpg",
       about:"Certificate of Completion in Linux Terminal for beginners from Udemy"
     },
     {
       name: "Node.js",
       issued: "Udemy",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/Nodejs.jpg",
+      url: "/certificates/nodejs.jpg",
       about:"Certificate of Completion in NodeJS Masterclass (Express, MongoDB, OpenAI) - 2024 from Udemy"
     },
     {
       name: "PHP",
       issued: "Udemy",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/php.jpg",
+      url: "/certificates/PHP.jpg",
       about:"Certificate of Completion in PHP for Beginners:PHP Crash Course from Udemy"
     },
     {
@@ -87,10 +116,10 @@ const skills = {
       about:"Certificate of Completion in the Complete Ubuntu Linux Server Administration Course from Udemy"
     },
     {
-      name: "Github",
+      name: "Gitbash",
       issued: "Udemy",
-      url: "https://my-portfolio-asset.s3.ap-south-1.amazonaws.com/Certificates/github.jpg",
-      about:"Certification of Completion of Github Basics from Udemy"
+      url: "/certificates/gitbash.jpg",
+      about:"Certification of Completion of Gitbash Basics from Udemy"
     },
   ],
   Projects: [

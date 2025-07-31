@@ -66,11 +66,11 @@ export default function Home() {
                   </h5>
                   <div className="flex flex-row items-center gap-4 pt-5">
                     {[
-                      { name: "/instalogo.json", href: "https://www.instagram.com/pranesh_sk._?igsh=OW5rc2p6MTg1aHZr",key:1 },
-                      { name: "/linkedin.json", href: "https://www.linkedin.com/in/praneshsk/",key:2 },
-                      { name: "/twitter.json", href: "https://x.com/i/flow/login?redirect_after_login=%2FPraneshSk18",key:3 },
-                      { name: "/github.json", href: "https://github.com/Praneshsk18",key:4 },
-                      { name: "/facebook.json", href: "https://www.facebook.com/share/15sVeipnPV/?mibextid=qi2Omg",key:5 },
+                      { name: "/lottielogo/instalogo.json", href: "https://www.instagram.com/pranesh_sk._?igsh=OW5rc2p6MTg1aHZr",key:1 },
+                      { name: "/lottielogo/linkedin.json", href: "https://www.linkedin.com/in/praneshsk/",key:2 },
+                      { name: "/lottielogo/twitter.json", href: "https://x.com/i/flow/login?redirect_after_login=%2FPraneshSk18",key:3 },
+                      { name: "/lottielogo/github.json", href: "https://github.com/Praneshsk18",key:4 },
+                      { name: "/lottielogo/facebook.json", href: "https://www.facebook.com/share/15sVeipnPV/?mibextid=qi2Omg",key:5 },
                     ].map((item) => (
                       <Link key={item.href} href={item.href} target="_blank" rel="noopener noreferrer">
                         <motion.div initial={{opacity:0,x:-10}} viewport={{once:true}} whileInView={{opacity:1,x:0}} transition={{delay:item.key*0.3 ,duration:0.2, ease:"easeInOut"}} className="flex rounded-full border border-amber-900/40 justify-center bg-[#181414] text-white transition-all duration-300 hover:bg-amber-800/10 hover:scale-110 hover:shadow-[0_0_4px_2px_rgba(0,0,0,0.2)] hover:shadow-amber-600">
@@ -92,9 +92,9 @@ export default function Home() {
                   transition={{ delay: 0.6, duration: 1, ease: "easeInOut" }}
                   className="flex flex-wrap pt-10 gap-10 justify-left"
                 >
-                  <a href="/resume.pdf" rel="noopener noreferrer" target="_blank" download="resume.pdf">
+                  <a href="\Pranesh S - Resume.pdf" rel="noopener noreferrer" target="_blank">
                     <button onClick={() => {
-                      window.open("/Resume.pdf","_blank");
+                      window.open("/Pranesh S - Resume.pdf","_blank");
                     }} className="w-[165px] h-[62px] cursor-pointer text-white text-[17px] rounded-[1rem] border-none relative bg-[#181414] transition-all duration-100 active:scale-90 active:rotate-3 active:bg-[radial-gradient(circle_farthest-corner_at_10%_20%,rgba(248,117,21,255)_17.8%,rgba(251,248,228,255)_100.2%)]">
                       <span className="absolute inset-0 w-full h-full bg-[radial-gradient(circle_farthest-corner_at_10%_20%,rgba(248,117,21,255)_17.8%,rgba(251,248,228,255)_100.2%)] blur-[10px] -z-10"></span>
                       Download CV
