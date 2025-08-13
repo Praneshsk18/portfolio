@@ -9,6 +9,7 @@ const Contacts = () => {
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState("");
   const [showMap, setShowMap] = useState(false);
+  const [loader, setloader] = useState(false);
 
   useEffect(() => {
     setShowMap(true);
@@ -16,12 +17,12 @@ const Contacts = () => {
 
   const additem = (e) => {
     e.preventDefault();
+    setloader(true); // show loader
+
     const message = { name, email, msg };
+
     axios
-      .post(
-        "https://portfolio-backend-rjwi.onrender.com/api/newmessage",
-        message
-      )
+      .post("https://portfolio-backend-rjwi.onrender.com/api/newmessage", message)
       .then(() => {
         alert("Message sent successfully!");
         setName("");
@@ -31,14 +32,18 @@ const Contacts = () => {
       .catch((err) => {
         console.error("Error:", err);
         alert(`Error: ${err.message}. Please try again.`);
+      })
+      .finally(() => {
+        setloader(false); // hide loader
       });
   };
+
   return (
     <div className="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
       <motion.div
         initial={{ scale: 0 }}
         whileInView={{ scale: 1 }}
-        viewport={{once:true}}
+        viewport={{ once: true }}
         className="text-center"
       >
         <p className="font-bold text-4xl md:text-5xl text-amber-600 mb-10 mt-10">
@@ -53,7 +58,7 @@ const Contacts = () => {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{once:true}}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="bg-gray-600/30 p-6 rounded-lg shadow-lg"
         >
@@ -102,16 +107,44 @@ const Contacts = () => {
             </div>
             <button
               type="submit"
-              className="w-full bg-amber-600 text-white py-2 px-4 rounded-lg hover:bg-amber-700 transition duration-800"
+              disabled={loader}
+              className="w-full bg-amber-600 text-white py-2 px-4 rounded-lg hover:bg-amber-700 transition duration-800 flex items-center justify-center"
             >
-              Send Message
+              {loader ? (
+                <>
+                  <svg
+                    className="animate-spin h-5 w-5 mr-2 text-white"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <circle
+                      className="opacity-25"
+                      cx="12"
+                      cy="12"
+                      r="10"
+                      stroke="currentColor"
+                      strokeWidth="4"
+                    ></circle>
+                    <path
+                      className="opacity-75"
+                      fill="currentColor"
+                      d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+                    ></path>
+                  </svg>
+                  Sending...
+                </>
+              ) : (
+                "Send Message"
+              )}
             </button>
+
           </form>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{once:true}}
+          viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-gray-600/30 p-6 rounded-lg shadow-lg"
         >
